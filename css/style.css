@@ -331,93 +331,6 @@ nav a:hover{
 .stat:hover{
     transform:translateY(-10px);
 }
-
-@media (max-width:768px){
-
-    .navbar{
-        padding:18px 20px;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        padding:110px 20px 70px;
-        text-align:center;
-    }
-
-    .hero h1{
-        font-size:2.8rem;
-    }
-
-    .hero-text{
-        font-size:1rem;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        width: 100%;
-    }
-
-    .hero-buttons a{
-        width:100%;
-        text-align:center;
-    }
-
-    .project,
-    .reverse{
-        flex-direction:column;
-        gap:40px;
-        padding:25px;
-    }
-
-    .project-content{
-        width:100%;
-    }
-
-    .section-header h2{
-        font-size:2.4rem;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-    .service-card{
-        padding:30px;
-    }
-
-    .stats{
-        flex-direction:column;
-        gap:50px;
-    }
-
-    .testimonial-card{
-        padding:35px 25px;
-    }
-
-    .contact-section{
-        grid-template-columns:1fr;
-        padding:100px 20px;
-        gap:40px;
-    }
-
-    .contact-content h2{
-        font-size:2.5rem;
-    }
-
-    .footer-links{
-        flex-direction:column;
-    }
-    .hero-content{
-        max-width: 100%;
-        width: 100%;
-    }
-    .hero{
-        justify-content: center;
-    }
-}
 .testimonials{
     background:#4F5A4B;
     color:white;
@@ -560,7 +473,19 @@ img{
     z-index:1002;
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
+
+    /* Prevent horizontal overflow */
+    html,
+    body{
+        overflow-x:hidden;
+        width:100%;
+    }
+
+    /* Navbar */
+    .navbar{
+        padding:18px 20px;
+    }
 
     .nav-btn{
         display:none;
@@ -568,20 +493,27 @@ img{
 
     .menu-toggle{
         display:block;
+        font-size:2rem;
+        cursor:pointer;
+        color:white;
+        z-index:1002;
     }
 
+    /* Mobile Navigation */
     nav{
         display:flex;
         position:fixed;
         top:0;
-        right:-100%;
+        right:-260px; /* Hide exactly the width of the menu */
         width:260px;
         height:100vh;
         background:rgba(24,35,37,.95);
         backdrop-filter:blur(20px);
-        transition:.4s ease;
         justify-content:center;
         align-items:center;
+        transition:right .4s ease;
+        z-index:1001;
+        overflow-x:hidden;
     }
 
     nav.active{
@@ -596,5 +528,106 @@ img{
 
     nav a{
         font-size:1.2rem;
+    }
+
+    /* Hero */
+    .hero{
+        justify-content:center;
+        text-align:center;
+        padding:90px 20px 60px;
+    }
+
+    .hero-content{
+        width:100%;
+        max-width:100%;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .hero-text{
+        font-size:1rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-buttons a{
+        width:100%;
+        text-align:center;
+    }
+
+    /* Projects */
+    .project,
+    .reverse{
+        flex-direction:column;
+        gap:40px;
+        padding:25px;
+        width:100%;
+    }
+
+    .project-content{
+        width:100%;
+    }
+
+    .project-image,
+    .project-image img{
+        width:100%;
+        display:block;
+    }
+
+    /* Sections */
+    .section-header h2{
+        font-size:2.4rem;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-card{
+        padding:30px;
+    }
+
+    .philosophy{
+        padding:120px 20px;
+    }
+
+    /* Stats */
+    .stats{
+        flex-direction:column;
+        gap:50px;
+    }
+
+    /* Testimonials */
+    .testimonial-card{
+        padding:35px 25px;
+    }
+
+    /* Contact */
+    .contact-section{
+        grid-template-columns:1fr;
+        gap:40px;
+        padding:100px 20px;
+    }
+
+    .contact-content h2{
+        font-size:2.5rem;
+    }
+
+    /* Footer */
+    .footer-links{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    /* Images */
+    img{
+        max-width:100%;
+        height:auto;
+        display:block;
     }
 }
