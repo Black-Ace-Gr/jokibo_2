@@ -410,6 +410,13 @@ nav a:hover{
     .footer-links{
         flex-direction:column;
     }
+    .hero-content{
+        max-width: 100%;
+        width: 100%;
+    }
+    .hero{
+        justify-content: center;
+    }
 }
 .testimonials{
     background:#4F5A4B;
