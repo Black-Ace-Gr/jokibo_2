@@ -19,3 +19,18 @@ ${details}`;
     window.open(whatsappURL, "_blank", "noopener, noreferrer");
 })
 ;
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+
+    menuToggle.textContent =
+        nav.classList.contains("active") ? "✕" : "☰";
+});
+document.querySelectorAll("#navMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+        menuToggle.textContent = "☰";
+    });
+});

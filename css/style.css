@@ -545,3 +545,49 @@ img{
     height:auto;
     display:block;
 }
+.menu-toggle{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+    color:white;
+    z-index:1002;
+}
+
+@media(max-width:768px){
+
+    .nav-btn{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:flex;
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:260px;
+        height:100vh;
+        background:rgba(24,35,37,.95);
+        backdrop-filter:blur(20px);
+        transition:.4s ease;
+        justify-content:center;
+        align-items:center;
+    }
+
+    nav.active{
+        right:0;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:35px;
+        text-align:center;
+    }
+
+    nav a{
+        font-size:1.2rem;
+    }
+}
