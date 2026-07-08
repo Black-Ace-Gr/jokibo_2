@@ -31,7 +31,7 @@ ul{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:25px 8%;
+    padding:18px 20px;
     z-index:1000;
     background:rgba(24,35,37,.75);
     backdrop-filter:blur(18px);
@@ -45,7 +45,7 @@ ul{
 }
 nav ul{
     display:flex;
-    gap:40px;
+    gap:15px;
 }
 
 nav a{
@@ -91,7 +91,7 @@ nav a:hover{
     min-height:100vh;
     display:flex;
     align-items:center;
-    padding:0 8%;
+    padding:100px 20px 60px;
     background:
     linear-gradient(
         rgba(24,35,37,.82),
@@ -118,6 +118,12 @@ nav a:hover{
 .hero-buttons{
     display:flex;
     gap:20px;
+    flex-direction: column;
+    width: 100%;
+}
+.hero-buttons a{
+    width:100%;
+    text-align:center;
 }
 .btn-primary{
     background:#C8A96A;
@@ -150,7 +156,7 @@ nav a:hover{
 
 .section-header h2{
     font-family:'Playfair Display', serif;
-    font-size:4rem;
+    font-size:clamp(2rem,6vw,4rem);
 }
 .project{
     display:flex;
@@ -171,7 +177,8 @@ nav a:hover{
     flex:1;
 }
 .project-content{
-    width: 50%;
+    width: 100%;
+    flex: 1;
 }
 .project-image img{
     width:100%;
@@ -197,11 +204,7 @@ nav a:hover{
     font-size:3rem;
     margin:20px 0;
 }
-.project-content p{
-    line-height:1.9;
-    color:#555;
-    margin-bottom:30px;
-}.project-content a{
+.project-content a{
     font-weight:600;
     transition:.3s;
 }
@@ -265,7 +268,7 @@ nav a:hover{
     backdrop-filter:blur(20px);
     border:
     1px solid rgba(255,255,255,.08);
-    padding:50px;
+    padding:30px;
     border-radius:25px;
     transition:.5s;
     cursor:pointer;
@@ -330,39 +333,83 @@ nav a:hover{
 .stat:hover{
     transform:translateY(-10px);
 }
-@media(max-width:900px){
+
+@media (max-width:768px){
+
+    .navbar{
+        padding:18px 20px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        padding:110px 20px 70px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .hero-text{
+        font-size:1rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons a{
+        width:100%;
+        text-align:center;
+    }
+
     .project,
     .reverse{
         flex-direction:column;
+        gap:40px;
+        padding:25px;
+    }
+
+    .project-content{
+        width:100%;
+    }
+
+    .section-header h2{
+        font-size:2.4rem;
     }
 
     .services-grid{
         grid-template-columns:1fr;
     }
+
+    .service-card{
+        padding:30px;
+    }
+
     .stats{
         flex-direction:column;
-        gap:60px;
+        gap:50px;
     }
-    .hero h1{
-        font-size:4rem;
+
+    .testimonial-card{
+        padding:35px 25px;
     }
-    nav{
-        display:none;
-    }
+
     .contact-section{
         grid-template-columns:1fr;
+        padding:100px 20px;
+        gap:40px;
     }
 
-    .hero h1{
-        font-size:3.5rem;
-    }
-
-    .section-header h2{
+    .contact-content h2{
         font-size:2.5rem;
     }
 
-    .philosophy h2{
-        font-size:3rem;
+    .footer-links{
+        flex-direction:column;
     }
 }
 .testimonials{
@@ -375,7 +422,7 @@ nav a:hover{
     margin:auto;
     background:#2D3D40;
     border: 1px solid rgba(255,255,255,.06);
-    padding:80px;
+    padding:35px 25px;
     border-radius:30px;
     text-align:center;
     box-shadow:
@@ -403,10 +450,10 @@ nav a:hover{
 .contact-section{
     background:#111;
     color:white;
-    padding:160px 8%;
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:80px;
+    padding:100px 25px;
+    gap:40px;
 }
 .contact-content p{
     color:#C8A96A;
@@ -469,8 +516,9 @@ footer{
 .footer-links{
     margin-top:30px;
     display:flex;
+    flex-direction:column;
+    gap:15px;
     justify-content:center;
-    gap:30px;
 }
 .footer-links a{
     transition:.3s;
